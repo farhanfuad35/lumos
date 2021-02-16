@@ -105,11 +105,6 @@ class Hashing{
         return Number(out);
     }
 
-
-    calculatePrimaryHash(word){
-        return this.convertFromWordToKey(word) % dictionary.numberOfWords;
-    }
-
     calculateSecondaryHash(a, b, m, word){
         const aB = BigInt(a);
         const keyB = BigInt(this.convertFromWordToKey(word));
@@ -207,6 +202,9 @@ class Hashing{
         return unique;
     }
 
+    calculatePrimaryHash(word){
+        return this.convertFromWordToKey(word) % dictionary.numberOfWords;
+    }
 
     generatePrimaryHash(word){       
         return this.convertFromWordToKey(word) % dictionary.numberOfWords;
@@ -239,6 +237,9 @@ class Hashing{
                 
                 // The new size of hashtable[i].length should be the square of
                 // the size hashtable[i] that was passed
+            }
+            else{
+                this.hashTableKeys[i] = [1, 0, 1];
             }
         }
 
@@ -297,7 +298,15 @@ function search(){
         const m = hashing.hashTableKeys[pHash][2];
 
         sHash = hashing.calculateSecondaryHash(a, b, m, word);
-        if(dictionary.database[hashing.hashTable[pHash][sHash]].en == word){
+
+        // DEBUG
+        // console.log('abm: ' +a + ' ' + b + ' ' + m);
+        // console.log(hashing.hashTable[pHash][sHash]);
+        // console.log(dictionary.database[hashing.hashTable[pHash][sHash]]);
+
+
+        if(hashing.hashTable[pHash][sHash] != null && 
+            dictionary.database[hashing.hashTable[pHash][sHash]].en == word){
             output.innerHTML = dictionary.database[hashing.hashTable[pHash][sHash]].bn;
         }
         else{
