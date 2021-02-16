@@ -14,7 +14,7 @@ class Debug{
             mx = Math.max(mx, hashTable[i].length);
         }
 
-        return mx;
+        return Math.sqrt(mx);
     }
 
     statistics(hashTable){
@@ -222,6 +222,8 @@ class Hashing{
             // Secondary Hash is going to contain the indices of the dictionary.database
             // First check if this word already exists
             if(this.noDuplicate(word, this.hashTable[numValue])){
+                // DEBUG
+                
                 this.hashTable[numValue].push(i);
             }
         }
