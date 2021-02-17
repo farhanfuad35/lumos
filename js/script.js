@@ -2,6 +2,7 @@ const dictionaryDatabaseLink = 'https://raw.githubusercontent.com/farhanfuad35/l
 const RADIX = 256;
 const PRIME = 908209935089;  // 12 digit
 const ROOT_PRIME = 95300
+var START_TIME;
 
 // Classes
 
@@ -39,6 +40,8 @@ class Debug{
     }
 
     statistics(hashTable){
+        var END_TIME = new Date();
+        console.log('Hashing Took ' + (END_TIME.getTime() - START_TIME.getTime()) + 'ms');
         console.log('Total Words: ' + dictionary.numberOfWords);
         console.log('Total Duplicates: ' + this.duplicateWords);
         console.log('Maximum number of collisions in a particular slot: ' + 
@@ -235,6 +238,7 @@ class Hashing{
     }
 
     generateHashTable(){
+        START_TIME = new Date();
         this.initializeHashTable();
 
         for(var i=0; i<dictionary.numberOfWords; i++){
@@ -285,7 +289,7 @@ var hashing = new Hashing();
 // Main function running at page load
 
 window.onload = function initializeHashing(){
-    console.log('Working');
+    console.log('Data Received');
     dictionary = fetch(dictionaryDatabaseLink)
         .then(response => {
             if(!response.ok){
@@ -302,8 +306,6 @@ window.onload = function initializeHashing(){
             dictionary.numberOfWords = Object.keys(dictionary.database).length;
         })
         .then(response => hashing.generateHashTable());
-    
-    console.log('Size printed');
 }
 
 // Actual search function invoked by onkeyup
