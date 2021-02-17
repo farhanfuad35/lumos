@@ -17,11 +17,35 @@ class Debug{
         return Math.sqrt(mx);
     }
 
+    numberOfSlots(hashTable){
+        var sum=0;
+        for(var i=0; i<hashTable.length; i++){
+            sum+=hashTable[i].length;
+        }
+
+        return sum;
+    }
+
+    numberOfEmptySlots(){
+        var sum=0;
+        for(var i=0; i<hashing.hashTableKeys.length; i++){
+            // console.log(hashing.hashTableKeys[i]);
+            if(hashing.hashTableKeys[i]==null){
+                sum++;
+            }
+        }
+
+        return sum;
+    }
+
     statistics(hashTable){
         console.log('Total Words: ' + dictionary.numberOfWords);
         console.log('Total Duplicates: ' + this.duplicateWords);
         console.log('Maximum number of collisions in a particular slot: ' + 
             this.maximumCollisionInFirstLayer(hashTable));
+        console.log('Sum of the # of slots should be less than ' + dictionary.numberOfWords*2);
+        console.log('Sum of the # of slots (sum(n_j^2)): ' + this.numberOfSlots(hashTable));
+        console.log('Number of empty slots: ' + this.numberOfEmptySlots());
     }
 }
 
@@ -240,7 +264,7 @@ class Hashing{
                 // The new size of hashtable[i].length should be the square of
                 // the size hashtable[i] that was passed
             }
-            else{
+            else if(this.hashTable[i].length == 1){
                 this.hashTableKeys[i] = [1, 0, 1];
             }
         }
