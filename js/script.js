@@ -1,4 +1,4 @@
-const dictionaryDatabaseLink = 'https://raw.githubusercontent.com/MinhasKamal/BengaliDictionary/master/BengaliDictionary.json';
+const dictionaryDatabaseLink = 'https://raw.githubusercontent.com/farhanfuad35/lumos/main/data/E2Bdatabase.json';
 const RADIX = 256;
 const PRIME = 908209935089;  // 12 digit
 const ROOT_PRIME = 95300
