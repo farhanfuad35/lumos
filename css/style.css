@@ -35,9 +35,9 @@
     padding-bottom: 40px;
   }
 
-  .input-group {
-    width : 45%; /*adjust as needed*/
-  }
+  /* .input-group {
+    width : 45%;
+  } */
 
   .form-control{
     background-color: #323841;
