@@ -12,9 +12,19 @@
     color: whitesmoke;
   }
 
-  .navbar-brand{
+  .navbar-header{
     font-size: 40px;
     -webkit-text-fill-color: #bbbbbb;
+  }
+
+  .navbar-footer{
+    font-size: small;
+    height: 40px;
+    -webkit-text-fill-color: #bbbbbb;
+  }
+
+  .navbar-footer:hover{
+    text-decoration: underline;
   }
 
   /* common styles end */
@@ -26,7 +36,7 @@
   }
 
   .input-group {
-    width : 40%; /*adjust as needed*/
+    width : 45%; /*adjust as needed*/
   }
 
   .form-control{
@@ -46,6 +56,11 @@
 
   .form-control::placeholder{
     -webkit-text-fill-color: gray;
+  }
+
+  .output {
+    padding-top: 25px;
+    font-size: 25px;
   }
 
   .loader {

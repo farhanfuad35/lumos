@@ -14,7 +14,7 @@
 <body>
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-		  <span class="navbar-brand mx-auto">lumos</span>
+		  <span class="navbar-brand navbar-header mx-auto">lumos</span>
 		</div>
 	</nav>
 
@@ -24,13 +24,26 @@
 			<div class="row">
 				<h2 class="home_title">English to Bangla Dictionary</h2>
 			</div>
-				<div>
-					<div class="input-group mb-3 mx-auto">
-						<input type="text" class="form-control" placeholder="Type a word" aria-label="Recipient's username" aria-describedby="button-addon2">
-					  </div>
-				</div>
+
+			<div>
+				<div class="input-group mb-3 mx-auto">
+					<input type="text" class="form-control" id="query" onkeyup="search()" placeholder="Type a word..." aria-label="Recipient's username" aria-describedby="button-addon2">
+					</div>
+			</div>
+
+			<div>
+				<p id="output" class="text-center text-wrap output">
+
+				</p>
+			</div>
+
 		</div>
 	</div>
+
+	<!-- Navbar Footer -->
+	<nav class="navbar fixed-bottom navbar-dark bg-dark">
+		<a class="navbar-brand navbar-footer mx-auto" target="_blank" href="https://github.com/farhanfuad35/lumos">GitHub</a>
+	</nav>
 	
 	<script src="js/script.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
