@@ -1,6 +1,6 @@
 # lumos
 
-An Engligh to Bangla Dictionary implemented using [Perfect Hashing](https://en.wikipedia.org/wiki/Perfect_hash_function). The dictionary contains approximately
+An English to Bangla Dictionary implemented using [Perfect Hashing](https://en.wikipedia.org/wiki/Perfect_hash_function). The dictionary contains approximately
 103,650 words and takes about ~400ms to complete the hashing algorithm.
 Check browser console (ctrl+shift+i) for more relevant statistics after loading the [dictionary](https://farhanfuad35.github.io/lumos/).
 
